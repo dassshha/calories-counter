@@ -1,4 +1,4 @@
-export type State = {
+export type StateType = {
     gender: string,
     age: number,
     height: number,

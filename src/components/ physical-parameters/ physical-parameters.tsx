@@ -1,11 +1,12 @@
-import {useInput} from '../../hooks/useInput';
-import {SelectorKey} from '../../const';
-import {updateAge, updateHeight, updateWeight} from '../../store/actions';
+import {useNumberInputType} from '../../types/use-input';
 
-export const PhysicalParameters = (): JSX.Element => {
-  const age = useInput(SelectorKey.Age, (payload) => updateAge(Number(payload)))
-  const height = useInput(SelectorKey.Height, (payload) => updateHeight(Number(payload)))
-  const weight = useInput(SelectorKey.Weight, (payload) => updateWeight(Number(payload)))
+type PhysicalParametersProps = {
+    age: useNumberInputType,
+    height: useNumberInputType,
+    weight: useNumberInputType
+};
+
+export const PhysicalParameters = ({age, height, weight}: PhysicalParametersProps): JSX.Element => {
 
   return (
       <fieldset className="form__item form__parameters" name="parameters">
@@ -23,7 +24,7 @@ export const PhysicalParameters = (): JSX.Element => {
                       </span>
                   </div>
                   <div className="input__wrapper">
-                      <input type="text" id="age" name="age" placeholder='0' inputMode="decimal" maxLength={3} required value={age.value} onChange={age.onChange} />
+                      <input type="number" id="age" name="age" placeholder='0' inputMode="decimal" maxLength={3} required value={age.value} onChange={age.onChange} />
                   </div>
               </div>
               <div className="input">
@@ -36,7 +37,7 @@ export const PhysicalParameters = (): JSX.Element => {
                       </span>
                   </div>
                   <div className="input__wrapper">
-                      <input type="text" id="height" name="height" placeholder='0' inputMode="decimal" maxLength={3} required value={height.value} onChange={height.onChange} />
+                      <input type="number" id="height" name="height" placeholder='0' inputMode="decimal" maxLength={3} required value={height.value} onChange={height.onChange} />
                   </div>
               </div>
               <div className="input">
@@ -49,7 +50,7 @@ export const PhysicalParameters = (): JSX.Element => {
                       </span>
                   </div>
                   <div className="input__wrapper">
-                      <input type="text" id="weight" name="weight" placeholder='0' inputMode="decimal" maxLength={3} required value={weight.value} onChange={weight.onChange}/>
+                      <input type="number" id="weight" name="weight" placeholder='0' inputMode="decimal" maxLength={3} required value={weight.value} onChange={weight.onChange}/>
                   </div>
               </div>
           </div>

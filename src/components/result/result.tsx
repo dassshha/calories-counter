@@ -1,6 +1,6 @@
 export const Result = (): JSX.Element => {
   return (
-      <section className="counter__result counter__result--hidden">
+      <section className="counter__result counter__result">
           <h2 className="heading">
               Ваша норма калорий
           </h2>

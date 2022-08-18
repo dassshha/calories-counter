@@ -1,8 +1,8 @@
 import {createReducer} from '@reduxjs/toolkit';
-import {State} from '../types/state';
+import {StateType} from '../types/state';
 import {updateActivity, updateAge, updateGenre, updateHeight, updateWeight} from './actions';
 
-const initialState: State = {
+const initialState: StateType = {
     gender: 'male',
     age: 0,
     height: 0,

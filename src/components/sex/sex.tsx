@@ -1,11 +1,11 @@
-import {useInput} from '../../hooks/useInput';
-import {SelectorKey} from '../../const';
-import {updateGenre} from '../../store/actions';
 import {isChecked} from '../../is-checked';
+import {useNumberInputType, useStringInputType} from '../../types/use-input';
 
-export const Sex = (): JSX.Element => {
-  const gender = useInput(SelectorKey.Gender, (payload: string) => updateGenre(payload));
+type SexProps = {
+    gender: useStringInputType
+};
 
+export const Sex = ({gender}: SexProps): JSX.Element => {
   return (
       <div className="form__item">
           <h2 className="heading">
