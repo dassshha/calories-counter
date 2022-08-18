@@ -1,7 +1,7 @@
 import {Form} from '../components/form/form';
 import {Result} from '../components/result/result';
 
-const Main = (): JSX.Element => {
+export const Main = (): JSX.Element => {
     return (
         <main className="main">
             <div className="container">
@@ -16,5 +16,3 @@ const Main = (): JSX.Element => {
         </main>
     );
 };
-
-export {Main};

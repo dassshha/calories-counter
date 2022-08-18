@@ -1,4 +1,4 @@
-const Result = (): JSX.Element => {
+export const Result = (): JSX.Element => {
   return (
       <section className="counter__result counter__result--hidden">
           <h2 className="heading">
@@ -33,5 +33,3 @@ const Result = (): JSX.Element => {
       </section>
   );
 }
-
-export {Result};

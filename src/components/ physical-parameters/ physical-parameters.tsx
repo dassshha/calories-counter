@@ -1,4 +1,12 @@
-const PhysicalParameters = (): JSX.Element => {
+import {useInput} from '../../hooks/useInput';
+import {SelectorKey} from '../../const';
+import {updateAge, updateHeight, updateWeight} from '../../store/actions';
+
+export const PhysicalParameters = (): JSX.Element => {
+  const age = useInput(SelectorKey.Age, (payload) => updateAge(Number(payload)))
+  const height = useInput(SelectorKey.Height, (payload) => updateHeight(Number(payload)))
+  const weight = useInput(SelectorKey.Weight, (payload) => updateWeight(Number(payload)))
+
   return (
       <fieldset className="form__item form__parameters" name="parameters">
           <legend className="visually-hidden">
@@ -15,7 +23,7 @@ const PhysicalParameters = (): JSX.Element => {
                       </span>
                   </div>
                   <div className="input__wrapper">
-                      <input type="text" id="age" name="age" placeholder='0' inputMode="decimal" maxLength={3} required />
+                      <input type="text" id="age" name="age" placeholder='0' inputMode="decimal" maxLength={3} required value={age.value} onChange={age.onChange} />
                   </div>
               </div>
               <div className="input">
@@ -28,7 +36,7 @@ const PhysicalParameters = (): JSX.Element => {
                       </span>
                   </div>
                   <div className="input__wrapper">
-                      <input type="text" id="height" name="height" placeholder='0' inputMode="decimal" maxLength={3} required />
+                      <input type="text" id="height" name="height" placeholder='0' inputMode="decimal" maxLength={3} required value={height.value} onChange={height.onChange} />
                   </div>
               </div>
               <div className="input">
@@ -41,7 +49,7 @@ const PhysicalParameters = (): JSX.Element => {
                       </span>
                   </div>
                   <div className="input__wrapper">
-                      <input type="text" id="weight" name="weight" placeholder='0' inputMode="decimal" maxLength={3} required />
+                      <input type="text" id="weight" name="weight" placeholder='0' inputMode="decimal" maxLength={3} required value={weight.value} onChange={weight.onChange}/>
                   </div>
               </div>
           </div>
@@ -49,4 +57,3 @@ const PhysicalParameters = (): JSX.Element => {
   );
 }
 
-export {PhysicalParameters};
