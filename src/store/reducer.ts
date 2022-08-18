@@ -1,29 +1,17 @@
 import {createReducer} from '@reduxjs/toolkit';
 import {StateType} from '../types/state';
-import {updateActivity, updateAge, updateGenre, updateHeight, updateWeight} from './actions';
+import {updateCalories} from './actions';
 
 const initialState: StateType = {
-    gender: 'male',
-    age: 0,
-    height: 0,
-    weight: 0,
-    activity: 'min'
+    min: 0,
+    norm: 0,
+    max: 0
 };
 
 export const reducer = createReducer(initialState, builder => {
-    builder.addCase(updateGenre, (state, action) => {
-        state.gender = action.payload;
-    });
-    builder.addCase(updateAge, (state, action) => {
-        state.age = action.payload;
-    });
-    builder.addCase(updateHeight, (state, action) => {
-        state.height = action.payload;
-    });
-    builder.addCase(updateWeight, (state, action) => {
-        state.weight = action.payload;
-    });
-    builder.addCase(updateActivity, (state, action) => {
-        state.activity = action.payload;
+    builder.addCase(updateCalories, (state, action) => {
+        state.min = action.payload.min;
+        state.norm = action.payload.norm;
+        state.max = action.payload.max;
     });
 });

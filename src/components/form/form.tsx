@@ -5,6 +5,8 @@ import {FormSubmit} from '../form-submit/form-submit';
 import {FormEvent} from 'react';
 import {countCalories} from '../../count-calories';
 import {useInput} from '../../hooks/use-input';
+import {useDispatch} from 'react-redux';
+import {updateCalories} from '../../store/actions';
 
 type FormProps = {
     showResult: () => void,
@@ -18,11 +20,13 @@ export const Form = ({showResult, hideResult}: FormProps): JSX.Element => {
     const weight = useInput<number>(0);
     const physicalActivity = useInput<string>('min');
 
+    const dispatch = useDispatch();
+
       const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
             evt.preventDefault();
             showResult();
-            const res = countCalories(gender.value, age.value, height.value, weight.value, physicalActivity.value);
-            console.log(res);
+            const calories = countCalories(gender.value, age.value, height.value, weight.value, physicalActivity.value);
+            dispatch(updateCalories(calories));
         }
 
       const handleReset = (evt: FormEvent<HTMLFormElement>) => {
@@ -40,7 +44,7 @@ export const Form = ({showResult, hideResult}: FormProps): JSX.Element => {
               <Sex gender={gender}/>
               <PhysicalParameters age={age} height={height} weight={weight}/>
               <PhysicalActivity physicalActivity={physicalActivity}/>
-              <FormSubmit age={age} height={height} weight={weight}/>
+              <FormSubmit age={age.value} height={height.value} weight={weight.value}/>
           </form>
       );
 }

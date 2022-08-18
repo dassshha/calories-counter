@@ -1,4 +1,9 @@
+import {useSelector} from 'react-redux';
+import {getCalories} from '../../store/selectors';
+
 export const Result = (): JSX.Element => {
+    const calories = useSelector(getCalories);
+
   return (
       <section className="counter__result counter__result">
           <h2 className="heading">
@@ -7,7 +12,7 @@ export const Result = (): JSX.Element => {
           <ul className="counter__result-list">
               <li className="counter__result-item">
                   <h3>
-                      <span id="calories-norm">3 800</span> ккал
+                      <span id="calories-norm">{calories.norm}</span> ккал
                   </h3>
                   <p>
                       поддержание веса
@@ -15,7 +20,7 @@ export const Result = (): JSX.Element => {
               </li>
               <li className="counter__result-item">
                   <h3>
-                      <span id="calories-minimal">3 300</span> ккал
+                      <span id="calories-minimal">{calories.min}</span> ккал
                   </h3>
                   <p>
                       снижение веса
@@ -23,7 +28,7 @@ export const Result = (): JSX.Element => {
               </li>
               <li className="counter__result-item">
                   <h3>
-                      <span id="calories-maximal">4 000</span> ккал
+                      <span id="calories-maximal">{calories.max}</span> ккал
                   </h3>
                   <p>
                       набор веса

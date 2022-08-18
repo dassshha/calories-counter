@@ -1,7 +1,3 @@
-export type StateType = {
-    gender: string,
-    age: number,
-    height: number,
-    weight: number,
-    activity: string
-};
+import {CaloriesType} from './calories';
+
+export type StateType = CaloriesType;

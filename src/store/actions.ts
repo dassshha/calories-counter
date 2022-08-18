@@ -1,12 +1,5 @@
 import {createAction} from '@reduxjs/toolkit';
 import {ActionType} from '../types/action';
+import {CaloriesType} from '../types/calories';
 
-export const updateGenre = createAction<string>(ActionType.UpdateGenre);
-
-export const updateAge = createAction<number>(ActionType.UpdateAge);
-
-export const updateHeight = createAction<number>(ActionType.UpdateHeight);
-
-export const updateWeight = createAction<number>(ActionType.UpdateWeight);
-
-export const updateActivity = createAction<string>(ActionType.UpdateActivity);
+export const updateCalories = createAction<CaloriesType>(ActionType.UpdateCalories);

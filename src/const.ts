@@ -1,11 +1,3 @@
-export enum SelectorKey {
-    Gender = 'gender',
-    Age ='age',
-    Height = 'height',
-    Weight = 'weight',
-    Activity = 'activity'
-}
-
 export const PHYSICAL_ACTIVITY = {
     min : 1.2,
     low : 1.375,
