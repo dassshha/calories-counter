@@ -28,6 +28,11 @@ export const Form = ({showResult, hideResult}: FormProps): JSX.Element => {
       const handleReset = (evt: FormEvent<HTMLFormElement>) => {
             evt.preventDefault();
             hideResult();
+            gender.onReset();
+            age.onReset();
+            height.onReset();
+            weight.onReset();
+            physicalActivity.onReset();
         }
 
       return (
