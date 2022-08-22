@@ -1,10 +1,9 @@
 import {useEffect, useState} from 'react';
-import {useNumberInputType} from '../../types/use-input';
 
 type FormSubmitProps = {
-    age: number,
-    height: number,
-    weight: number
+    age: string,
+    height: string,
+    weight: string
 };
 
 export const FormSubmit = ({age, height, weight}: FormSubmitProps): JSX.Element => {

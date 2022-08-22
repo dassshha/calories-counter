@@ -1,8 +1,8 @@
 import {isChecked} from '../../is-checked';
-import {useNumberInputType, useStringInputType} from '../../types/use-input';
+import {useInputType} from '../../types/use-input';
 
 type SexProps = {
-    gender: useStringInputType
+    gender: useInputType
 };
 
 export const Sex = ({gender}: SexProps): JSX.Element => {

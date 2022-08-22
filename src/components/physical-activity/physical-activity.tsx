@@ -1,8 +1,8 @@
 import {isChecked} from '../../is-checked';
-import {useStringInputType} from '../../types/use-input';
+import {useInputType} from '../../types/use-input';
 
 type PhysicalActivityProps = {
-    physicalActivity: useStringInputType
+    physicalActivity: useInputType
 };
 
 export const PhysicalActivity = ({physicalActivity}: PhysicalActivityProps): JSX.Element => {

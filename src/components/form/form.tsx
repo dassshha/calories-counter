@@ -14,19 +14,21 @@ type FormProps = {
 };
 
 export const Form = ({showResult, hideResult}: FormProps): JSX.Element => {
-    const gender = useInput<string>('male');
-    const age = useInput<number>(0);
-    const height = useInput<number>(0);
-    const weight = useInput<number>(0);
-    const physicalActivity = useInput<string>('min');
+    const gender = useInput('male');
+    const age = useInput('');
+    const height = useInput('');
+    const weight = useInput('');
+    const physicalActivity = useInput('min');
 
     const dispatch = useDispatch();
 
       const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
             evt.preventDefault();
             showResult();
-            const calories = countCalories(gender.value, age.value, height.value, weight.value, physicalActivity.value);
-            dispatch(updateCalories(calories));
+            if (age.value && height.value && weight.value) {
+                const calories = countCalories(gender.value, Number(age.value), Number(height.value), Number(weight.value), physicalActivity.value);
+                dispatch(updateCalories(calories));
+            }
         }
 
       const handleReset = (evt: FormEvent<HTMLFormElement>) => {

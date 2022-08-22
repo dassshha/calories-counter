@@ -1,9 +1,9 @@
-import {useNumberInputType} from '../../types/use-input';
+import {useInputType} from '../../types/use-input';
 
 type PhysicalParametersProps = {
-    age: useNumberInputType,
-    height: useNumberInputType,
-    weight: useNumberInputType
+    age: useInputType,
+    height: useInputType,
+    weight: useInputType
 };
 
 export const PhysicalParameters = ({age, height, weight}: PhysicalParametersProps): JSX.Element => {
