@@ -1,5 +1,5 @@
-export type CaloriesType = {
-    min: number,
-    norm: number,
-    max: number
-};
+export interface CaloriesType {
+  min: number;
+  norm: number;
+  max: number;
+}

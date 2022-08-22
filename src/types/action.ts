@@ -1,4 +1,3 @@
 export enum ActionType {
-    UpdateCalories = 'updateCalories',
+  UpdateCalories = 'updateCalories',
 }
-

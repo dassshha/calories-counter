@@ -1,3 +1,7 @@
-import {useInput} from '../hooks/use-input';
+import { ChangeEvent } from 'react';
 
-export type useInputType = ReturnType<typeof useInput>;
+export interface useInputType {
+  value: string;
+  onReset: () => void;
+  onChange: (evt: ChangeEvent<any>) => void;
+}

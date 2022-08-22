@@ -1,33 +1,18 @@
-import {ChangeEvent, useState} from 'react';
+import { ChangeEvent, useState } from 'react';
+import { useInputType } from '../types/use-input';
 
-// export const useInput = <T>(initialValue: T) => {
-//   const [value, setValue] = useState<T>(initialValue);
-//
-//   const handleChange = (evt: ChangeEvent<any>) => {
-//     setValue(evt.target.value as T);
-//   };
-//
-//   const handleReset = () => setValue(initialValue);
-//
-//   return {
-//     value: value as T,
-//     onReset: handleReset,
-//     onChange: handleChange
-//   };
-// };
-
-export const useInput = (initialValue: string) => {
+export const useInput = (initialValue: string): useInputType => {
   const [value, setValue] = useState(initialValue);
 
-  const handleChange = (evt: ChangeEvent<any>) => {
+  const handleChange = (evt: ChangeEvent<any>): void => {
     setValue(evt.target.value);
   };
 
-  const handleReset = () => setValue(initialValue);
+  const handleReset = (): void => setValue(initialValue);
 
   return {
-    value: value,
+    value,
     onReset: handleReset,
-    onChange: handleChange
+    onChange: handleChange,
   };
 };
